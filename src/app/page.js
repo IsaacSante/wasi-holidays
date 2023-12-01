@@ -47,7 +47,7 @@ export default function Home() {
           <h1 className="text-2xl font-bold">{labels[language].siteTitle}</h1>
           <button
             onClick={toggleLanguage}
-            className="py-2 px-4 bg-blue-500 text-white rounded"
+            className="py-2 px-4 bg-orange-500 text-white rounded"
           >
             {labels[language].toggleButton}
           </button>
