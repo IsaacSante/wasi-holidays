@@ -40,49 +40,56 @@ export default function Home() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full font-mono text-sm">
+    <main className="flex flex-col items-center justify-between p-4 md:p-24 min-h-screen">
+      <div className="z-10 w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-5xl font-mono text-xs sm:text-sm md:text-base">
         {/* Title and Language Toggle */}
-        <div className="flex justify-between items-center mb-10">
-          <h1 className="text-2xl font-bold">{labels[language].siteTitle}</h1>
+        <div className="flex justify-between items-center mb-2 md:mb-10">
+          <h1 className="text-lg md:text-2xl font-bold">
+            {labels[language].siteTitle}
+          </h1>
           <button
             onClick={toggleLanguage}
-            className="py-2 px-4 bg-orange-500 text-white rounded"
+            className="py-1 px-2 md:py-2 md:px-4 bg-orange-500 text-white rounded text-xs sm:text-sm"
           >
             {labels[language].toggleButton}
           </button>
         </div>
 
         {/* Family Events Section */}
-        <section className="mb-8">
-          <h2 className="text-xl font-bold mb-4">
+        <section className="mb-2 md:mb-8">
+          <h2 className="text-md md:text-xl font-bold mb-2 md:mb-4">
             {labels[language].familyEvents}
           </h2>
           {familyEventsData.map((event, index) => (
             <div
               key={index}
-              className="bg-orange-500 p-4 mb-4 rounded-lg shadow-md"
+              className="bg-orange-500 p-2 md:p-4 mb-2 md:mb-4 rounded-lg shadow-md"
             >
-              <h3 className="text-xl font-semibold">{event.Event}</h3>
-              <p>
+              <h3 className="text-md md:text-xl font-semibold">
+                {event.Event}
+              </h3>
+              <p className="text-xs sm:text-sm">
                 {labels[language].date}: {event.Date}
               </p>
-              <p>
+              <p className="text-xs sm:text-sm">
                 {labels[language].time}: {event.Time}
               </p>
-              <p>
+              <p className="text-xs sm:text-sm">
                 {labels[language].borough}: {event.Borough}
               </p>
-              <p>
+              <p className="text-xs sm:text-sm">
                 {labels[language].location}: {event.Location}
               </p>
               {event.Ages && (
-                <p>
+                <p className="text-xs sm:text-sm">
                   {labels[language].ages}: {event.Ages}
                 </p>
               )}
               {event.Link && (
-                <a href={event.Link} className="text-blue-600 hover:underline">
+                <a
+                  href={event.Link}
+                  className="text-blue-600 hover:underline text-xs sm:text-sm"
+                >
                   {labels[language].moreInfo}
                 </a>
               )}
@@ -91,35 +98,40 @@ export default function Home() {
         </section>
 
         {/* Holiday Events Section */}
-        <section>
-          <h2 className="text-xl font-bold mb-4">
+        <section className="mb-2 md:mb-8">
+          <h2 className="text-md md:text-xl font-bold mb-2 md:mb-4">
             {labels[language].holidayEvents}
           </h2>
           {holidayEventsData.map((event, index) => (
             <div
               key={index}
-              className="bg-orange-500 p-4 mb-4 rounded-lg shadow-md"
+              className="bg-orange-500 p-2 md:p-4 mb-2 md:mb-4 rounded-lg shadow-md"
             >
-              <h3 className="text-xl font-semibold">{event.Event}</h3>
-              <p>
+              <h3 className="text-md md:text-xl font-semibold">
+                {event.Event}
+              </h3>
+              <p className="text-xs sm:text-sm">
                 {labels[language].date}: {event.Date}
               </p>
-              <p>
+              <p className="text-xs sm:text-sm">
                 {labels[language].time}: {event.Time}
               </p>
-              <p>
+              <p className="text-xs sm:text-sm">
                 {labels[language].borough}: {event.Borough}
               </p>
-              <p>
+              <p className="text-xs sm:text-sm">
                 {labels[language].location}: {event.Location}
               </p>
               {event.Ages && (
-                <p>
+                <p className="text-xs sm:text-sm">
                   {labels[language].ages}: {event.Ages}
                 </p>
               )}
               {event.Link && (
-                <a href={event.Link} className="text-blue-600 hover:underline">
+                <a
+                  href={event.Link}
+                  className="text-blue-600 hover:underline text-xs sm:text-sm"
+                >
                   {labels[language].moreInfo}
                 </a>
               )}
